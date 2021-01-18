@@ -28,5 +28,6 @@ module.exports = {
     'no-console': 'off',
     'import/prefer-default-export': 'off',
     'no-undef': 'off',
+    'no-unused-vars': 'off',
   },
 };

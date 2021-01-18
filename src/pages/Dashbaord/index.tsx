@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from './styles';
 
-export default (): JSX.Element => {
+const DashBoard: React.FC = (): JSX.Element => {
   return (
     <Container>
       <div>
@@ -10,3 +10,5 @@ export default (): JSX.Element => {
     </Container>
   );
 };
+
+export default DashBoard;
