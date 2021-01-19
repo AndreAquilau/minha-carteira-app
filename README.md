@@ -2,12 +2,12 @@
 
 App desenvolvido para gerenciamento de dispesas e receitas.
 
-## List emoji html
+### List emoji html
 
 <p style="font-size:100px">&#128540;</p>
 [HTML Smiley Emoji](https://www.w3schools.com/charsets/ref_emoji_smileys.asp)
 
-## Global Styles in Styled-Components
+### Global Styles in Styled-Components
 >StylesGlobal.ts
 ```ts
 import {createGlobalStyles} from 'styled-components';
@@ -16,7 +16,7 @@ export default createGlobalStyles`
 `;
 ```
 
-## Theme in Styled-Components
+### Theme in Styled-Components
 #### Step One
 >theme.d.ts
 ```ts
@@ -63,7 +63,7 @@ export const Container = styled.div`
 
 ```
 
-## useMemo
+### useMemo
 <p>usado para armazena valores</p>
 
 ```ts
@@ -85,7 +85,7 @@ export default (): JSX.Element => {
 }
 ```
 
-## Lib react-switch // Button Switch
+### Lib react-switch // Button Switch
 ```bash
 yarn add react-switch
 ```
