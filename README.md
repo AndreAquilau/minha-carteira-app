@@ -7,7 +7,7 @@ App desenvolvido para gerenciamento de dispesas e receitas.
 <p style="font-size:100px">&#128540;</p>
 [HTML Smiley Emoji](https://www.w3schools.com/charsets/ref_emoji_smileys.asp)
 
-## Global Styles in Styled-Component
+## Global Styles in Styled-Components
 >StylesGlobal.ts
 ```ts
 import {createGlobalStyles} from 'styled-components';
@@ -17,7 +17,7 @@ export default createGlobalStyles`
 ```
 
 ## Theme in Styled-Components
-### Step One
+#### Step One
 >theme.d.ts
 ```ts
 import 'styled-components'
@@ -40,10 +40,11 @@ import React from 'react';
 import Routes from '../routes';
 import StylesGlobal from '../styles/StylesGlobal';
 import {ThemeProvider} from 'styled-components';
+import dark from '../styles/themes/dark';
 
 export default App (): JSX.Element => {
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={dark}>
       <StylesGlobal/>
       <Routes/>
     </ThemeProvider>
