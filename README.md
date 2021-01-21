@@ -186,7 +186,7 @@ const App: React.FC = (): JSX.Element => {
   )
 }
 ```
-### useContext
+### useContext and createContext
 > index.tsx => create context
 ```tsx
 import React, { createContext, useContext, useState } from 'react';
