@@ -146,6 +146,9 @@ export const ToggleLabel = styled.span`
   Obs: utilizar integração com styled quando usar comeponente de terceiros.
 */
 export const ToggleSelector = styled(Switch).attrs<ReactSwitchProps>(
+  /*
+    theme => é a propriedade tema do styled-components e estando compartilhada com o componente pronto.
+  */
   ({ theme }) => ({
     onColor: theme.colors?.info,
     offColor: theme.colors?.warning,
