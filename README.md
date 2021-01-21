@@ -186,4 +186,87 @@ const App: React.FC = (): JSX.Element => {
   )
 }
 ```
+### useContext
+> index.tsx => create context
+```tsx
+import React, { createContext, useContext, useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import Routes from './routes';
+import StylesGlobal from './styles/StylesGlobal';
+import dark from './styles/themes/dark';
+import light from './styles/themes/light';
 
+const ThemeContext = createContext({
+  getTheme: '',
+  setTheme: (props?: any): any => {},
+});
+
+const App = () => {
+  const [getTheme, setTheme] = useState('');
+
+  return (
+    <ThemeContext.Provider value={{ getTheme, setTheme }}>
+      <ThemeProvider
+        theme={() => {
+          if (getTheme === dark.title) {
+            return dark;
+          }
+          if (getTheme === light.title) {
+            return light;
+          }
+          return dark;
+        }}
+      >
+        <StylesGlobal />
+        <Routes />
+      </ThemeProvider>
+    </ThemeContext.Provider>
+  );
+};
+
+export function useTheme() {
+  const context = useContext(ThemeContext);
+  const { getTheme, setTheme } = context;
+  return { getTheme, setTheme };
+}
+
+export default App;
+```
+> index.tsx => useContext
+```tsx
+import React, { useState } from 'react';
+import { Container, ToggleLabel, ToggleSelector } from './styles';
+import { useTheme } from '../../App';
+import dark from '../../styles/themes/dark';
+import light from '../../styles/themes/light';
+
+const SwitchTheme: React.FC = (): JSX.Element => {
+  const [getChecked, setChecked] = useState(false);
+  const { getTheme, setTheme } = useTheme();
+
+  return (
+    <Container>
+      <ToggleLabel>Dark</ToggleLabel>
+      <ToggleSelector
+        checked={getChecked}
+        width={45}
+        height={20}
+        uncheckedIcon={false}
+        checkedIcon={false}
+        onChange={(e) => {
+          if (getChecked) {
+            setChecked(false);
+            setTheme(dark.title);
+          } else {
+            setChecked(true);
+            setTheme(light.title);
+          }
+        }}
+      />
+      <ToggleLabel>Light</ToggleLabel>
+    </Container>
+  );
+};
+
+export default SwitchTheme;
+```

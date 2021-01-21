@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { Container, ToggleLabel, ToggleSelector } from './styles';
+import { useTheme } from '../../App';
+import dark from '../../styles/themes/dark';
+import light from '../../styles/themes/light';
 
 const SwitchTheme: React.FC = (): JSX.Element => {
   const [getChecked, setChecked] = useState(false);
+  const { getTheme, setTheme } = useTheme();
 
   return (
     <Container>
@@ -14,10 +18,12 @@ const SwitchTheme: React.FC = (): JSX.Element => {
         uncheckedIcon={false}
         checkedIcon={false}
         onChange={(e) => {
-          if (!getChecked) {
-            setChecked(true);
-          } else {
+          if (getChecked) {
             setChecked(false);
+            setTheme(dark.title);
+          } else {
+            setChecked(true);
+            setTheme(light.title);
           }
         }}
       />
