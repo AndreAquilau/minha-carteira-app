@@ -140,7 +140,8 @@ export const ToggleLabel = styled.span`
   margin-right: 10px;
 `;
 /*
-  Passa como parâmetro para o styled um componente e para a propriedade attrs uma interface genérica do componente que é os props do componente.
+  Passa como parâmetro para o styled um componente e para a propriedade attrs uma interface
+  genérica do componente que é os props do componente.
 
   Obs: usa integração quando usar comeponente de terceiros.
 */
