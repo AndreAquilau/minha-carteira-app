@@ -143,7 +143,7 @@ export const ToggleLabel = styled.span`
   Passa como parâmetro para o styled um componente e para a propriedade attrs uma interface
   genérica do componente que é os props do componente.
 
-  Obs: usa integração quando usar comeponente de terceiros.
+  Obs: usar integração quando usar comeponente de terceiros.
 */
 export const ToggleSelector = styled(Switch).attrs<ReactSwitchProps>(
   ({ theme }) => ({
